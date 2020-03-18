@@ -56,6 +56,8 @@ Things you may want to cover:
 |user_id|integer|null: false, foreign_key: true|
 |saler_id|integer||
 |buyer_id|integer||
+|category_id|integer|foreign_key: true|
+|size|integer|null: false|
 ### Association
 - belongs_to :user
 - has_many :comments
