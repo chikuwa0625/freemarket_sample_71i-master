@@ -43,10 +43,10 @@ Things you may want to cover:
 ## itemsテーブル 
 |Column|Type|Options|
 |------|----|-------|
-|product_name|string|null: false|
-|product_version|text|null: false|
+|name|string|null: false|
+|version|text|null: false|
 |brand|string||
-|product_condition|string|null: false|
+|condition|string|null: false|
 |delivery_select|string|null: false|
 |delivery_method_include_fee|string|null: false|
 |delivery_method_COD|string|null: false|
