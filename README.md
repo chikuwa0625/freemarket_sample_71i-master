@@ -23,7 +23,6 @@ Things you may want to cover:
 
 * ...
 
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -37,20 +36,15 @@ Things you may want to cover:
 |birth_date|date|null: false|
 |tel|integer|null: false, unique: true|
 ### Association
-- has_many :Exhibitions
+- has_many :items
 - has_many :comments
 - has_many :pays
 
-
-## Exhibitionsテーブル 
+## itemsテーブル 
 |Column|Type|Options|
 |------|----|-------|
-|image|text|null: false|
 |product_name|string|null: false|
 |product_version|text|null: false|
-|category1|string|null: false|
-|category2|string||
-|category3|string||
 |brand|string||
 |product_condition|string|null: false|
 |delivery_select|string|null: false|
@@ -65,30 +59,47 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :comments
+- has_many :photos
+- belongs_to :category
 
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null: false|
-|Exhibition_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|item_id|integer| foreign_key: true|
+|user_id|integer| foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to :Exhibition
+- belongs_to :item
 
 
 ## paysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|card_nunber|integer|null: false|
+|card_number|integer|null: false|
 |month|integer|null: false|
 |day|integer|null: false|
 |security_code|integer|null: false|
-|user_id|integer|null: false, foreign_key: true|
+|user_id|integer| foreign_key: true|
 ### Association
 - belongs_to :user
 
+## photosテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|foreign_key: true|
+|url|text|null: false|
+### Association
+- belongs_to :item
+
+## categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|ancestry|string||
+### Association
+- has_many :items
 
 
 
